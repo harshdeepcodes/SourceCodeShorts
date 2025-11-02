@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <style>
+    /* Basic Page Styling */
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #d3cbb8, #e6d5a8);
+      font-family: 'Poppins', sans-serif;
+    }
+
+    /* Outer 3D Box */
+    .login-container {
+      background: #f7f4ec;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2),
+                  inset 0 2px 5px rgba(255, 255, 255, 0.5);
+      border-radius: 15px;
+      padding: 40px;
+      width: 320px;
+      text-align: center;
+      transform: perspective(600px) rotateX(2deg);
+    }
+
+    .login-container h2 {
+      margin-bottom: 25px;
+      color: #4b3f2f;
+    }
+
+    /* Input Fields */
+    .login-container input {
+      width: 90%;
+      padding: 12px;
+      margin: 10px 0;
+      border: none;
+      outline: none;
+      border-radius: 8px;
+      background: #f0e8d9;
+      box-shadow: inset 2px 2px 5px rgba(0,0,0,0.1),
+                  inset -2px -2px 5px rgba(255,255,255,0.5);
+      font-size: 15px;
+    }
+
+    /* Login Button */
+    .login-container button {
+      margin-top: 15px;
+      width: 95%;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #c1a875, #b59f74);
+      color: #fff;
+      font-weight: bold;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      cursor: pointer;
+      transition: transform 0.1s ease, box-shadow 0.1s ease;
+    }
+
+    .login-container button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 7px 18px rgba(0,0,0,0.25);
+    }
+
+    .login-container button:active {
+      transform: translateY(1px);
+      box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h2>Login</h2>
+    <form>
+      <input type="text" placeholder="Username" required><br>
+      <input type="password" placeholder="Password" required><br>
+      <button type="submit">Enter</button>
+    </form>
+  </div>
+</body>
+</html>
