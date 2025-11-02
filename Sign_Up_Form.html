@@ -1,0 +1,184 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Signup Form</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* styles.css */
+
+/* ---------- Root Variables ---------- */
+:root {
+  --bg-gradient: linear-gradient(135deg, #e0eafc, #cfdef3);
+  --card-bg: #ffffff;
+  --accent-color: #3b82f6;
+  --text-color: #333;
+  --border-color: #ccc;
+  --shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  --radius: 12px;
+  --transition: 0.3s ease;
+}
+
+/* ---------- Base Styles ---------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-gradient);
+}
+
+/* ---------- Form Card ---------- */
+.container {
+  width: 90%;
+  max-width: 420px;
+}
+
+.signup-form {
+  background: var(--card-bg);
+  padding: 2rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.signup-form h1 {
+  text-align: center;
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+}
+
+/* ---------- Floating Label Inputs ---------- */
+.input-group {
+  position: relative;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 1rem 0.8rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  outline: none;
+  background: transparent;
+  font-size: 1rem;
+  color: var(--text-color);
+  transition: border var(--transition);
+}
+
+.input-group label {
+  position: absolute;
+  left: 0.8rem;
+  top: 1rem;
+  color: #777;
+  font-size: 1rem;
+  pointer-events: none;
+  transition: all var(--transition);
+  background: var(--card-bg);
+  padding: 0 0.25rem;
+}
+
+.input-group input:focus,
+.input-group input:not(:placeholder-shown) {
+  border-color: var(--accent-color);
+}
+
+.input-group input:focus + label,
+.input-group input:not(:placeholder-shown) + label {
+  top: -0.5rem;
+  left: 0.6rem;
+  font-size: 0.8rem;
+  color: var(--accent-color);
+}
+
+/* ---------- Button ---------- */
+button {
+  background: var(--accent-color);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius);
+  padding: 0.9rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background var(--transition), transform var(--transition);
+}
+
+button:hover {
+  background: #2563eb;
+  transform: translateY(-2px);
+}
+
+/* ---------- Footer Link ---------- */
+.signin-text {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.signin-text a {
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
+.signin-text a:hover {
+  text-decoration: underline;
+}
+
+/* ---------- Responsive ---------- */
+@media (min-width: 480px) {
+  .signup-form {
+    padding: 2.5rem;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <!-- Signup Card -->
+  <main class="container">
+    <form class="signup-form" aria-label="Signup Form">
+      <h1>Create Account</h1>
+
+      <!-- Full Name -->
+      <div class="input-group">
+        <input type="text" id="fullname" name="fullname" required placeholder=" " aria-required="true">
+        <label for="fullname">Full Name</label>
+      </div>
+
+      <!-- Email -->
+      <div class="input-group">
+        <input type="email" id="email" name="email" required placeholder=" " aria-required="true">
+        <label for="email">Email</label>
+      </div>
+
+      <!-- Password -->
+      <div class="input-group">
+        <input type="password" id="password" name="password" required minlength="6" placeholder=" " aria-required="true">
+        <label for="password">Password</label>
+      </div>
+
+      <!-- Confirm Password -->
+      <div class="input-group">
+        <input type="password" id="confirm" name="confirm" required minlength="6" placeholder=" " aria-required="true">
+        <label for="confirm">Confirm Password</label>
+      </div>
+
+      <!-- Button -->
+      <button type="submit">Sign Up</button>
+
+      <!-- Sign In link -->
+      <p class="signin-text">Already have an account? <a href="#">Sign in</a></p>
+    </form>
+  </main>
+</body>
+</html>
