@@ -1,0 +1,83 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Animated Loading Spinner</title>
+    <style>
+        /* styles.css */
+
+        /* ---------- CSS Variables ---------- */
+        :root {
+            --spinner-size: 60px;
+            --spinner-color: #4f46e5;
+            --spinner-bg: #e0e7ff;
+            --text-color: #555;
+            --animation-speed: 1s;
+        }
+
+        /* ---------- Basic Layout ---------- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #f5f7fa, #e4ecf7);
+            font-family: system-ui, sans-serif;
+        }
+
+        /* ---------- Spinner ---------- */
+        .spinner {
+            width: var(--spinner-size);
+            height: var(--spinner-size);
+            border: 6px solid var(--spinner-bg);
+            border-top-color: var(--spinner-color);
+            border-radius: 50%;
+            animation: spin var(--animation-speed) linear infinite;
+            margin-bottom: 12px;
+        }
+
+        /* ---------- Loading Text ---------- */
+        .loading-text {
+            font-size: 1rem;
+            color: var(--text-color);
+            opacity: 0;
+            animation: fadeIn 2s ease-in-out infinite alternate;
+        }
+
+        /* ---------- Animations ---------- */
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* ---------- Container ---------- */
+        .loader-container {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading container -->
+    <div class="loader-container">
+        <div class="spinner"></div>
+        <p class="loading-text">Loading...</p>
+    </div>
+</body>
+
+</html>
